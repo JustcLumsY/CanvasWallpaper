@@ -4,10 +4,12 @@
 	box-sizing: border-box;
 }
 body {
-	background: darkgray;
+	/* margin: 0;
+	padding: 0; */
+	/* background: rgb(245, 130, 130); */
 }
 #canvas {
-	background: transparent;
+	/* background: transparent; */
 	/* opacity: 80%; */
 	top: 0;
 	left: 0;
@@ -17,8 +19,9 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	filter: blur(30px) contrast(21);
+	filter: blur(4px) contrast(1);
 	z-index: -1;
+	background-color: currentcolor;
 	/* height: 100%;
 	width: 100%; */
 }

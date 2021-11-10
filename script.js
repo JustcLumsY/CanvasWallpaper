@@ -9,8 +9,8 @@ window.addEventListener("resize", function () {
 	canvas.height = window.innerHeight;
 });
 
-canvas.width = 1200;
-canvas.height = 900;
+canvas.width = 1100;
+canvas.height = 1000;
 
 const a = (2 * Math.PI) / 6;
 const r = 50;
@@ -36,14 +36,14 @@ function drawGrid(width, height) {
 }
 
 function drawHexagon(x, y) {
-	ctx.strokeStyle = "lightgrey";
+	ctx.strokeStyle = "white";
 	//ctx.strokeStyle = "rbg(0,0,0,0.2)";
 	ctx.fillStyle = "rgb(90, 90, 90)";
 	// ctx.shadowOffsetX = 0;
 	// ctx.shadowOffsety = 0;
-	ctx.shadowColor = "black";
-	ctx.shadowBlur = 2;
-	ctx.globalCompositeOperation = "lighter";
+	ctx.shadowColor = "grey";
+	ctx.shadowBlur = 12;
+	ctx.globalCompositeOperation = "difference";
 	//ctx.globalAlpha = -1;
 	ctx.beginPath();
 	for (let i = 0; i < 6; i++) {
@@ -52,6 +52,7 @@ function drawHexagon(x, y) {
 	ctx.closePath();
 	ctx.stroke();
 	ctx.fill();
+	
 }
 
 // Lage en ny Canvas id for å lage ny animasjon under?

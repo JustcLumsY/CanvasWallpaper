@@ -10,8 +10,8 @@ window.addEventListener("resize", function(){
 	canvas1.height = window.innerHeight;
 });
 
-canvas.width = 1200;
-canvas.height = 900;
+canvas1.width = 1000;
+canvas1.height = 1000;
 
 const mouse = {
 	x: undefined,
@@ -35,23 +35,27 @@ class Glow{
 		this.y = canvas.height/2;
 		// this.speedY = 2;
 		// this.speedX = 2;
-		this.radius = 100;
+		this.radius = 150;
 		this.bounce = 1;
 		this.friction = 0.98;
 		this.gravity = 0;
+		this.color = "radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,248,252,1) 100%)";
+		
 		// this.directionX = Math.random() * canvas.height;
 		// this.directionY = Math.random() * canvas.width;
-		this.velX = (Math.random() * 1 + 5) * (Math.floor(Math.random() * 2) || -1);
-		this.velY = (Math.random() * 2 + 5) * (Math.floor(Math.random() * 1) || -1);
+		this.velX = (Math.random() * 1 + 2) * (Math.floor(Math.random() * 2) || -1);
+		this.velY = (Math.random() * 1 + 2) * (Math.floor(Math.random() * 1) || -1);
 	}
 	draw(){
 		//context.clearRect(0, 0, canvas1.width, canvas1.height);
-		context.fillStyle = 'hsl(' + hue + ', 100%, 50%';
+		context.fillStyle = 'orangered'
+		
 		context.beginPath();
 		context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
 		context.fill();
-		this.x += 1;
-		this.y += 1;
+		this.x += 0.5;
+		this.y += 0.5;
+
 	
 		
 	}
@@ -79,8 +83,8 @@ class Glow{
 	}
 	
 	if(this.x + this.radius >= canvas.width){ // Right
-		this.velX *= -this.bounce
-		this.x = canvas.width - this.radius
+		this.velX *= -this.bounce;
+		this.x = canvas.width - this.radius;
 	}
 	if (this.velX < 0.01 && this.velX > -0.01){
 		this.velX = 0;
@@ -88,6 +92,7 @@ class Glow{
 	if (this.velY < 0.01 && this.velY > -0.01){
 		this.velY = 0;
 	}
+	//context.clearRect(0, 0, canvas1.height, canvas1.width)
 
 	}
 }
@@ -116,7 +121,8 @@ function animate() {
 	context.clearRect(0, 0, canvas1.height, canvas1.width);
 	 createGlow();
 	 handleGlow();
-	hue++;
+	 //context.clearRect(0, 0, canvas1.height, canvas1.width);
+	//hue++;
 	requestAnimationFrame(animate);
 }
 animate();
