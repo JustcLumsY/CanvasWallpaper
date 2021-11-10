@@ -28,7 +28,7 @@ function drawGrid(width, height) {
 		for (
 			let x = r, j = 0;
 			x + r * (1 + Math.cos(a)) < width;
-			x += r * (1 + Math.cos(a)), y += (-1.02) ** j++ * r * Math.sin(a)
+			x += r * (1 + Math.cos(a)), y += (-1.03) ** j++ * r * Math.sin(a)
 		) {
 			drawHexagon(x, y);
 		}
@@ -36,7 +36,7 @@ function drawGrid(width, height) {
 }
 
 function drawHexagon(x, y) {
-	ctx.strokeStyle = "white";
+	ctx.strokeStyle = "lightgrey";
 	//ctx.strokeStyle = "rbg(0,0,0,0.2)";
 	ctx.fillStyle = "rgb(90, 90, 90)";
 	// ctx.shadowOffsetX = 0;
